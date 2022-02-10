@@ -62,14 +62,11 @@ console.log( 'isPositive - should say false', isPositive(-3) );
   return array[array.length-1];
 } */
 
-// let array = []
-function getLast (array) {
-  return array[array.length - 1];
+/* function getLast(arrayTest) {
+  let lastItem = arrayTest[arrayTest.length - 1];
+  return lastItem;
 }
-
-console.log(getLast(array[0, 1, 2, 3]));
-console.log(getLast(array));
-console.log(getLast(array['Leo', 'Nyx', 'Andie']));
+getLast(arrayTest[0, 1, 2, 3]); */
 
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
@@ -80,7 +77,7 @@ for (let value of array) {
 }
 }
 
-console.log()
+
 // ----------------------
 // Stretch Goals
 // ----------------------

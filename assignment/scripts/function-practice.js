@@ -11,7 +11,7 @@ function hello() {
 // Call the function to test
 console.log('Test - should say "Hello World!"', hello());
 
-
+console.log('Moving on to question 2:');
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
 function helloName(name) {
@@ -22,6 +22,7 @@ helloName('Dane');
 helloName('Ashlyn');
 helloName('Spiderman')
 
+console.log('Moving on to question 3:');
 // 3. Function to add two numbers together & return the result
 function addNumbers(firstNumber, secondNumber) {
   let solution = firstNumber + secondNumber;
@@ -30,6 +31,7 @@ function addNumbers(firstNumber, secondNumber) {
 console.log(addNumbers(2, 3));
 console.log(addNumbers(87, 13));
 
+console.log('Moving on to question 4:');
 // 4. Function to multiply three numbers & return the result
 function multiplyThree(numberOne, numberTwo, numberThree) {
 let solution = numberOne * numberTwo * numberThree;
@@ -39,6 +41,7 @@ console.log(multiplyThree(1, 2, 3));
 console.log(multiplyThree(3, 3, 3,));
 console.log(multiplyThree(10, 100, 15));
 
+console.log('Moving on to question 5:');
 // 5. Function that will return true if a number is positive,
 //    or greater than zero, and false otherwise
 function isPositive( number ) {
@@ -54,30 +57,68 @@ console.log( 'isPositive - should say true', isPositive(3) );
 console.log( 'isPositive - should say false', isPositive(0) );
 console.log( 'isPositive - should say false', isPositive(-3) );
 
-
+console.log('Moving on to question 6:')
 // 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
 
-/* function getLast( array ) {
-  return array[array.length-1];
-} */
 
-/* function getLast(arrayTest) {
-  let lastItem = arrayTest[arrayTest.length - 1];
+/* function getLast(array) {
+  let lastItem = array[array.length - 1];
   return lastItem;
 }
-getLast(arrayTest[0, 1, 2, 3]); */
+
+getLast(array[0, 1, 2, 3]);*/ //says array is not defined
+
+
+/* let array = []; //gets stuck here as a breakpoint.
+function getLast(array) {
+  let lastItem = array[array.length - 1];
+  return lastItem;
+} */
+
+/* let array = new Array []; // says unexpected item ]
+
+
+function getLast(array) {
+  let lastItem = array[array.length - 1];
+  return lastItem;
+}
+
+getLast(array[0, 1, 2, 3]); */
+
+// figured it out - total syntax problem with the difference between calling
+// the function and console logging the function. See below.
+
+function getLast(array) {
+  console.log('inside getLast');
+  let lastItem = array[array.length - 1];
+  return lastItem;
+}
+console.log(getLast([0, 1, 2, 3])); // returns 3
+console.log(getLast(['Andie', 'Nyx', 'Leo'])); // returns Leo
+console.log(getLast([])); //returns 'undefined' due to empty array.
+
+console.log('Moving on to question 7:');
 
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
 function find( value, array ){
-for (let value of array) {
-  return true;
-}
-}
+  //console.log('in find function'); testing function with log
+  for (let i = 0; i < array.length; i++) {
+    console.log(array[i]); // logs current item in array
+    if (value == array[i]) {
+      return true;
+      console.log('true');
+    }
+  }
+    }
+
+find(3, [2, 3, 4, 5, 6]);
+console.log(find(3, [2, 3, 4, 5, 6]));
 
 
+console.log('Stretch Goals:')
 // ----------------------
 // Stretch Goals
 // ----------------------

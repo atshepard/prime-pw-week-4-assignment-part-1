@@ -108,15 +108,26 @@ function find( value, array ){
   for (let i = 0; i < array.length; i++) {
     console.log(array[i]); // logs current item in array
     if (value == array[i]) {
-      return true;
-      console.log('true');
+      console.log('true'); //using console logs allows it to iterate through the entire array.
+    } else {
+      console.log('false');// using return stops the loop after the first return.
     }
   }
-    }
+}
 
-find(3, [2, 3, 4, 5, 6]);
+// While testing, I encountered an issue where my loop would stop running when using 'return as below:'
+// function find( value, array ){
+//   for (let i = 0; i < array.length; i++) {
+//     console.log(array[i]); // logs current item in array
+//     if (value == array[i]) {
+//       return true;
+//     } else {
+//       return false; }
+// ?? Is there a way to iterate through 'return'? Or will that forever be the end?
+// }
+
 console.log(find(3, [2, 3, 4, 5, 6]));
-
+console.log(find('Andie', ['Leo', 'Nyx', 'Andie', 'Adam', 'Ashlyn']));
 
 console.log('Stretch Goals:')
 // ----------------------

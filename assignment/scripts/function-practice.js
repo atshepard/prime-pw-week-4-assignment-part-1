@@ -60,37 +60,19 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 console.log('Moving on to question 6:')
 // 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
-
-
-/* function getLast(array) {
-  let lastItem = array[array.length - 1];
-  return lastItem;
-}
-
-getLast(array[0, 1, 2, 3]);*/ //says array is not defined
-
-
-/* let array = []; //gets stuck here as a breakpoint.
-function getLast(array) {
-  let lastItem = array[array.length - 1];
-  return lastItem;
-} */
-
-/* let array = new Array []; // says unexpected item ]
-
-
-function getLast(array) {
-  let lastItem = array[array.length - 1];
-  return lastItem;
-}
-
-getLast(array[0, 1, 2, 3]); */
-
+// This question broke my brain for a while.
+//
+// function getLast(array) {
+//   let lastItem = array[array.length - 1];
+//   return lastItem;
+// } - this is my original attempt. This works FINE when called CORRECTLY *FACEPALM*
+// getLast(array[0, 1, 2, 3]);*/ //says array is not defined. (because it's called improperly)
+//
 // figured it out - total syntax problem with the difference between calling
-// the function and console logging the function. See below.
+// the function and console logging the function. Just a bunch of silly errors on my part. See below.
 
 function getLast(array) {
-  console.log('inside getLast');
+  console.log('inside getLast'); // added this to make sure I wasn't crazy and that the function at least made it this far.
   let lastItem = array[array.length - 1];
   return lastItem;
 }
@@ -103,6 +85,9 @@ console.log('Moving on to question 7:');
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
+
+// I used console.log here to ensure we got a 'true' or 'false' value for each item in the array:
+
 function find( value, array ){
   //console.log('in find function'); testing function with log
   for (let i = 0; i < array.length; i++) {
@@ -115,19 +100,21 @@ function find( value, array ){
   }
 }
 
-// While testing, I encountered an issue where my loop would stop running when using 'return as below:'
+// While testing, I encountered an feature (not bug) where my loop would stop running when using 'return' as below:
 // function find( value, array ){
 //   for (let i = 0; i < array.length; i++) {
 //     console.log(array[i]); // logs current item in array
 //     if (value == array[i]) {
 //       return true;
-//     } else {
+//     } else {     -- or else if (value != array[i]) - I tried both.
 //       return false; }
-// ?? Is there a way to iterate through 'return'? Or will that forever be the end?
-// }
+// }}
+// ?? Google suggests that using 'return' always exits the function, as the function has delivered its result.
+// That makes sense to me.
 
-console.log(find(3, [2, 3, 4, 5, 6]));
-console.log(find('Andie', ['Leo', 'Nyx', 'Andie', 'Adam', 'Ashlyn']));
+console.log(find(3, [2, 3, 4, 5, 6]));//should log false, true, false, false, false in addition to the values.
+console.log(find('Andie', ['Leo', 'Nyx', 'Andie', 'Adam', 'Ashlyn'])); // should log false, false, true, false, false in addition to the values.
+console.log(find(1, [])); // just curious to see what it does with an empty array: it says undefined. Makes sense.
 
 console.log('Stretch Goals:')
 // ----------------------

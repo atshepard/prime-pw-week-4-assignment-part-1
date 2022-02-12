@@ -78,7 +78,7 @@ function getLast(array) {
 }
 console.log(getLast([0, 1, 2, 3])); // returns 3
 console.log(getLast(['Andie', 'Nyx', 'Leo'])); // returns Leo
-console.log(getLast([])); //returns 'undefined' due to empty array.
+console.log(getLast([])); //returns 'undefined' due to empty array. 
 
 console.log('Moving on to question 7:');
 
@@ -86,35 +86,34 @@ console.log('Moving on to question 7:');
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
 
-// I used console.log here to ensure we got a 'true' or 'false' value for each item in the array:
+// I used console.log here to find a solution that iterates through the entire loop just for testing. It does work.
 
-function find( value, array ){
-  //console.log('in find function'); testing function with log
-  for (let i = 0; i < array.length; i++) {
-    console.log(array[i]); // logs current item in array
-    if (value == array[i]) {
-      console.log('true'); //using console logs allows it to iterate through the entire array.
-    } else {
-      console.log('false');// using return stops the loop after the first return.
-    }
-  }
-}
-
-// While testing, I encountered an feature (not bug) where my loop would stop running when using 'return' as below:
 // function find( value, array ){
+//   //console.log('in find function'); testing function with log
 //   for (let i = 0; i < array.length; i++) {
 //     console.log(array[i]); // logs current item in array
 //     if (value == array[i]) {
-//       return true;
-//     } else {     -- or else if (value != array[i]) - I tried both.
-//       return false; }
-// }}
-// ?? Google suggests that using 'return' always exits the function, as the function has delivered its result.
-// That makes sense to me.
+//       console.log('true'); //using console logs allows it to iterate through the entire array.
+//     } else {
+//       console.log('false');// using return stops the loop after the first return.
+//     }
+//   }
+// }
+// using return terminates the loop, as below.
 
-console.log(find(3, [2, 3, 4, 5, 6]));//should log false, true, false, false, false in addition to the values.
-console.log(find('Andie', ['Leo', 'Nyx', 'Andie', 'Adam', 'Ashlyn'])); // should log false, false, true, false, false in addition to the values.
-console.log(find(1, [])); // just curious to see what it does with an empty array: it says undefined. Makes sense.
+function find( value, array ){
+  for (let i = 0; i < array.length; i++) {
+    console.log(array[i]); // logs current item in array
+      if (value == array[i]) {
+        return true;
+      }
+    }
+    return false;
+}
+
+console.log(find(3, [2, 3, 4, 5, 6]));
+console.log(find('Andie', ['Leo', 'Nyx', 'Andie', 'Adam', 'Ashlyn']));
+console.log(find(1, [])); // just curious to see what it does with an empty array: it fails to find the number, naturally.
 
 console.log('Stretch Goals:')
 // ----------------------
@@ -141,9 +140,9 @@ function sumAll(array) {
   return sum; //should provide the total sum
 }
 //My little sister helped me pick the numbers for the arrays:
-console.log(sumAll([5, 5, 5, 5, 5])); //returns 25
-console.log(sumAll([5, 4, 7, 2, 3])); //returns 21
-console.log(sumAll([7, 8, 9, 5, 1])); //returns 30
+console.log('Returns 25: ', sumAll([5, 5, 5, 5, 5])); //returns 25
+console.log('Returns 21: ', sumAll([5, 4, 7, 2, 3])); //returns 21
+console.log('Returns 30: ', sumAll([7, 8, 9, 5, 1])); //returns 30
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
@@ -157,7 +156,7 @@ function checkPositive(number){
 }
 
 const positiveArray = inputArray.filter(checkPositive); //the filter method will create a new array by using the checkPositive function to filter each item in the inputArray.
-console.log(positiveArray); // returns an array with [0, 1, 30, 21] as expected!
+console.log('Should read 0, 1, 30, 21', positiveArray); // returns an array with [0, 1, 30, 21] as expected!
 
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or

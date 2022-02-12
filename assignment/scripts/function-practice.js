@@ -149,6 +149,15 @@ console.log(sumAll([7, 8, 9, 5, 1])); //returns 30
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
 
+const inputArray = [0, 1, -6, -14, 30, 21];
+
+
+function checkPositive(number){
+  return number >= 0; //should only return values above or equal to zero.
+}
+
+const positiveArray = inputArray.filter(checkPositive); //the filter method will create a new array by using the checkPositive function to filter each item in the inputArray.
+console.log(positiveArray); // returns an array with [0, 1, 30, 21] as expected!
 
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or
